@@ -9,7 +9,7 @@ import React, { ReactNode, useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast';
 import AuctionCreatedToast from '../components/AuctionCreatedToast';
 import { getDetailedViewData } from '../actions/auctionActions';
-//import AuctionFinishedToast from '../components/AuctionFinishedToast';
+import AuctionFinishedToast from '../components/AuctionFinishedToast';
 
 type Props = {
     children: ReactNode
@@ -50,18 +50,18 @@ export default function SignalRProvider({ children, user }: Props) {
                         }
                     });
 
-                    // connection.on('AuctionFinished', (finishedAuction: AuctionFinished) => {
-                    //     const auction = getDetailedViewData(finishedAuction.auctionId);
-                    //     return toast.promise(auction, {
-                    //         loading: 'Loading',
-                    //         success: (auction) => 
-                    //             <AuctionFinishedToast 
-                    //                 finishedAuction={finishedAuction} 
-                    //                 auction={auction}
-                    //             />,
-                    //         error: (err) => 'Auction finished!'
-                    //     }, {success: {duration: 10000, icon: null}})
-                    // })
+                    connection.on('AuctionFinished', (finishedAuction: AuctionFinished) => {
+                        const auction = getDetailedViewData(finishedAuction.auctionId);
+                        return toast.promise(auction, {
+                            loading: 'Loading',
+                            success: (auction) =>
+                                <AuctionFinishedToast
+                                    finishedAuction={finishedAuction}
+                                    auction={auction}
+                                />,
+                            error: (err) => 'Auction finished!'
+                        }, { success: { duration: 10000, icon: null } })
+                    })
 
 
                 }).catch(error => console.log(error));
