@@ -41,7 +41,7 @@ export default function BidItem({ bid }: Props) {
             <div className='flex flex-col'>
                 <span>Bidder: {bid.bidder}</span>
                 <span className='text-gray-700 text-sm'>
-                    Time: {format(new Date(bid.bidDate), 'dd MMM yyyy h:mm a')}
+                    Time: {format(new Date(bid.bidTime), 'dd MMM yyyy h:mm a')}
                 </span>
             </div>
             <div className='flex flex-col text-right'>
