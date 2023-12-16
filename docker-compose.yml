@@ -34,7 +34,7 @@ services:
     networks:
       custom:      
   auction-svc:
-    image: trycatchlearn/auction-svc:latest
+    image: onlytafkas/auction-svc:latest
     build: 
       context: .
       dockerfile: src/AuctionService/Dockerfile
@@ -58,7 +58,7 @@ services:
     networks:
       custom:      
   search-svc:
-    image: trycatchlearn/search-svc:latest
+    image: onlytafkas/search-svc:latest
     build: 
       context: .
       dockerfile: src/SearchService/Dockerfile
@@ -76,7 +76,7 @@ services:
     networks:
       custom:      
   identity-svc:
-    image: trycatchlearn/identity-svc:latest
+    image: onlytafkas/identity-svc:latest
     build: 
       context: .
       dockerfile: src/IdentityService/Dockerfile
@@ -92,7 +92,7 @@ services:
       custom:
         ipv4_address: 10.5.0.200      
   gateway-svc:
-    image: trycatchlearn/gateway-svc:latest
+    image: onlytafkas/gateway-svc:latest
     build: 
       context: .
       dockerfile: src/GatewayService/Dockerfile
@@ -104,7 +104,7 @@ services:
     networks:
       custom:      
   bid-svc:
-    image: trycatchlearn/bid-svc:latest
+    image: onlytafkas/bid-svc:latest
     build: 
       context: .
       dockerfile: src/BiddingService/Dockerfile
@@ -123,7 +123,7 @@ services:
     networks:
       custom:      
   notify-svc:
-    image: trycatchlearn/notify-svc:latest
+    image: onlytafkas/notify-svc:latest
     build: 
       context: .
       dockerfile: src/NotificationService/Dockerfile
@@ -138,7 +138,7 @@ services:
     networks:
       custom:      
   web-app:
-    image: trycatchlearn/web-app
+    image: onlytafkas/web-app
     build: 
       context: .
       dockerfile: frontend/web-app/Dockerfile
