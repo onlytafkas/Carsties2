@@ -4,8 +4,15 @@ metadata:
   name: ingress-svc
   labels:
     name: ingress-svc
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"    
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - app.tafkas.be
+    - api.tafkas.be
+    secretName: carsties-tls  
   rules:
   - host: app.tafkas.be
     http:
