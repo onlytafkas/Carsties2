@@ -22,7 +22,7 @@ export default function SignalRProvider({ children, user }: Props) {
     const addBid = useBidStore(state => state.addBid);
     // NextJs workaround
     const apiUrl = process.env.NODE_ENV === 'production'
-        ? 'https://api.carsties.com/notifications'
+        ? 'https://api.tafkas.be/notifications'
         : process.env.NEXT_PUBLIC_NOTIFY_URL
 
     useEffect(() => {

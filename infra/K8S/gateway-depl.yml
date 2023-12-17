@@ -17,7 +17,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: ClientApp
-            value: https://app.carsties.com
+            value: https://app.tafkas.be
           - name: IdentityServiceUrl
             value: https://id.tafkas.be
 ---
